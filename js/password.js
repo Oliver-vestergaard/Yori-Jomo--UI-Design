@@ -6,8 +6,8 @@ if (sessionStorage.getItem("siteUnlocked") !== "true") {
     `
       <div class="password-screen">
         <form id="passwordForm">
-          <h1>Adgangskode</h1>
-          <p>Dette er et uddannelses projekt, og kan derfor ikke direkte forbindes med virksomheden "Yori Jomo"</p>
+          <h1 class:"passwordOver">Adgangskode</h1>
+          <p class:"passwordbrød">Dette er et uddannelses projekt, og kan derfor ikke direkte forbindes med virksomheden "Yori Jomo"</p>
           <input
             type="password"
             id="passwordInput"

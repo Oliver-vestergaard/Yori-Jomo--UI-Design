@@ -28,12 +28,13 @@
   color: red;
 }
 
-.password-screen h1,
-p {
-  margin: 0 auto;
+.passwordOver {
   text-align: center;
 }
 
+.passwordbrød {
+  text-align: center;
+}
 /* ==================================================
    MOBIL / BASE STYLES
    Standard styling

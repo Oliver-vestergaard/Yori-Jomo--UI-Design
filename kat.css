@@ -9,15 +9,16 @@
 
 .hero-content {
   position: absolute;
-  top: 50%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  width: 90%;
+  width: 50%;
 }
 
 .hero-content h1 {
   margin: 0;
+  font-size: var(--font-size-bodySm);
 }
 
 .brand-intro {
@@ -173,5 +174,10 @@
 @media (min-width: 769px) {
   .shoe_carousel {
     top: -200px;
+  }
+
+  .hero-content h1 {
+    margin: 0;
+    font-size: var(--font-size-h4);
   }
 }

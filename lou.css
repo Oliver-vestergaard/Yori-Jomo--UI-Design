@@ -40,7 +40,6 @@
 /* LINK UNDER SKOENE */
 .shoe-link {
   display: block;
-  margin-top: 10px;
 
   color: #17130f;
   text-align: center;
@@ -51,12 +50,6 @@
 /* MOBIL */
 .styles {
   padding: 35px 0;
-}
-
-.styles-heading {
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 30px;
 }
 
 .styles-heading h3 {
@@ -240,13 +233,6 @@
   .shoe-link {
     margin-top: 12px;
   }
-  .styles {
-    padding: 35px 3%;
-  }
-
-  .styles-heading {
-    margin-bottom: 25px;
-  }
 
   .shoes-grid {
     display: grid;
@@ -278,7 +264,7 @@
       "line line line"
       "copyright copyright copyright";
 
-    column-gap: 25px;
+    column-gap: 12px;
   }
 
   .footer_logo {

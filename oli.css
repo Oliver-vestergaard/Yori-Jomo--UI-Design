@@ -248,6 +248,17 @@ nav.active .menu {
   right: 0;
 }
 
+.CardHover {
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.CardHover:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
 /* =========================
    SEARCH
 ========================= */

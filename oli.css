@@ -1,0 +1,618 @@
+/****** PASSWORD *****/
+/***** Password *****/
+
+.password-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background);
+}
+
+.password-screen form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  max-width: 90%;
+}
+
+.password-screen input,
+.password-screen button {
+  padding: 0.75rem;
+}
+
+#passwordError {
+  color: red;
+}
+
+.password-screen h1,
+p {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ==================================================
+   MOBIL / BASE STYLES
+   Standard styling
+================================================== */
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+  height: 100px;
+}
+
+.header-inner {
+  position: relative;
+  height: 100%;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  display: block;
+  max-width: 200px;
+  height: auto;
+}
+
+/****** SIDE LOGO ******/
+.sideLogo {
+  position: fixed;
+  left: calc(var(--space-xxl2) / 2);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 20px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.menu {
+  display: none;
+  list-style: none;
+}
+
+.menu a {
+  display: block;
+  color: var(--text-color);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: var(--footer-color);
+}
+
+/* Mobilmenu: åbnes via burger.js */
+
+nav.active .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  padding: var(--space-lg);
+  background-color: var(--color-background);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+/* =========================
+   SHOP DROPDOWN
+========================= */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 20rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: var(--background-color);
+  border: 2px solid var(--footer-color);
+  z-index: 200;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* =========================
+   BURGER
+========================= */
+
+/* BURGER */
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  width: 30px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: none;
+
+  cursor: pointer;
+  position: relative;
+  z-index: 300;
+}
+
+.burger .burgerLine {
+  display: block;
+  width: 100%;
+  height: 2px;
+  flex-shrink: 0;
+  margin: 0;
+  background-color: #000;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* KRYDS */
+
+.burger.active .burgerLine:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burger.active .burgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active .burgerLine:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+/* =========================
+   IKONER
+========================= */
+
+.MenuSvg {
+  display: block;
+  width: 30px;
+  height: auto;
+}
+
+/* =========================
+   RESPONSIVE VISNING
+========================= */
+
+.mobile-only {
+  display: none;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  width: 100%;
+  padding-inline: var(--space-xxl2);
+  margin-inline: auto;
+}
+
+/* =========================
+   BELT CAROUSEL
+========================= */
+
+.belt-slider {
+  position: relative;
+}
+
+.belt-arrow {
+  position: absolute;
+  top: 140px;
+  z-index: 2;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.belt-arrow-left {
+  left: 0;
+}
+
+.belt-arrow-right {
+  right: 0;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  box-sizing: border-box;
+  z-index: 200;
+  width: 50%;
+  margin-right: 3.5rem;
+}
+
+.search-bar.active {
+  display: block;
+  background-color: var(--color-background);
+}
+
+/* =========================
+   KURV
+========================= */
+
+.CartSection {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 16px;
+  box-sizing: border-box;
+  z-index: 1000;
+
+  background-color: var(--color-background);
+  border-left: 2px solid var(--color-Text);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+/* Åben kurv */
+
+.CartSection.active {
+  transform: translateX(0);
+}
+
+/* Indhold */
+
+.cartIndhold {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  height: 100%;
+  position: relative;
+}
+
+/* Overskrift og luk-knap */
+
+.cartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cartHeader h4 {
+  margin: 0;
+}
+
+.closeCart {
+  cursor: pointer;
+}
+
+/* Produkt */
+
+.cartImage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.cartInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.cartInfo p {
+  margin: 0;
+}
+
+/* =========================
+   KNAPPER — SVG
+========================= */
+
+button svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+   BRUSH BUTTON
+========================= */
+
+.brush-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 281px;
+  aspect-ratio: 281 / 42;
+
+  color: #2f1e14;
+  text-decoration: none;
+}
+
+.brush-button svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.brush-button span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* ==================================================
+   TABLET
+   Fra 760 px
+================================================== */
+
+/* =========================
+   BURGER
+========================= */
+
+@media (min-width: 760px) {
+  .burger {
+    width: 35px;
+    height: 25px;
+  }
+}
+
+/* =========================
+   KURV
+========================= */
+
+@media (min-width: 760px) {
+  .CartSection {
+    width: 30%;
+  }
+}
+
+/* ==================================================
+   DESKTOP
+   Fra 960 px
+================================================== */
+
+/* =========================
+   NAVIGATION
+========================= */
+
+@media (min-width: 960px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .dropdown-menu a {
+    color: var(--text-color);
+  }
+
+  .dropdown-menu a:hover {
+    color: var(--footer-color);
+  }
+}
+
+/* ==================================================
+   RESPONSIVE OVERRIDES
+   Mobil og tablet: op til 959 px
+================================================== */
+
+/* =========================
+   HEADER
+========================= */
+
+@media (max-width: 959px) {
+  .header-inner {
+    padding-inline: var(--space-lg);
+  }
+
+  .logo img {
+    max-width: 184px;
+  }
+
+  .burger {
+    margin-right: auto;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .dropdown-menu {
+    display: none !important;
+  }
+
+  .cart svg {
+    width: 15px;
+  }
+
+  /****** CARTSECTION *******/
+  .CartSection {
+    width: 50%;
+  }
+
+  .cartIndhold {
+    margin-top: var(--space-md);
+  }
+
+  /******* SIDE LOGO ******/
+
+  .sideLogo {
+    display: none;
+  }
+}
+/* =========================
+   CONTAINER
+========================= */
+
+@media (max-width: 959px) {
+  .container {
+    padding-inline: var(--space-lg);
+  }
+}
+
+/* =========================
+   BELT CAROUSEL
+========================= */
+
+@media (min-width: 959px) {
+  .hide {
+    display: none;
+  }
+}
+
+@media (max-width: 959px) {
+  .belt-arrow {
+    display: none;
+  }
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+@media (max-width: 959px) {
+  .search-bar {
+    margin-right: 1.5rem;
+  }
+}
+
+/* ==================================================
+   MOBIL OVERRIDES
+   Op til 759 px
+================================================== */
+
+/****** CARTSECTION *******/
+
+/* =========================
+   KURV
+========================= */
+
+@media (max-width: 759px) {
+  button svg {
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  .CartSection {
+    width: 90%;
+  }
+}
+
+/* =========================
+   BRUSH BUTTON
+========================= */
+
+@media (max-width: 759px) {
+  .brush-button {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+/* =========================
+   BUTTON HOVER
+========================= */
+
+.brush-button {
+  transition: transform 0.2s ease;
+}
+
+.brush-button:hover {
+  transform: scale(1.03);
+}
+
+.belt-arrow {
+  transition: transform 0.2s ease;
+}
+
+.belt-arrow:hover {
+  transform: scale(1.03);
+}
+/* =========================
+   BELT ANIMATION
+========================= */
+
+.BeltMain,
+.BeltSekundary {
+  animation: slideInRight 1s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

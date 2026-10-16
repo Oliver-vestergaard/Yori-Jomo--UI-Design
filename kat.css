@@ -1,0 +1,177 @@
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.hero {
+  position: relative;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  width: 90%;
+}
+
+.hero-content h1 {
+  margin: 0;
+}
+
+.brand-intro {
+  padding: 40px 2.5%;
+  text-align: center;
+  color: #171512;
+}
+
+.brand-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.brand-heading h2 {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 8px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.line {
+  flex: 0 1 350px;
+  height: 1px;
+  background-color: #8a6b56;
+}
+
+.brand-intro p {
+  font-weight: 300;
+  line-height: 1.25;
+  margin: 8px auto 0;
+}
+
+.shoe_carousel {
+  --orbit-radius: clamp(100px, 30vw, 500px);
+
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  overflow: visible;
+  top: -80px;
+}
+
+.shoe {
+  position: absolute;
+  width: clamp(120px, 30vw, 500px);
+  height: auto;
+  object-fit: contain;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  animation: orbit 30s linear infinite;
+}
+
+.shoe:nth-child(1) {
+  --angle: 0deg;
+}
+
+.shoe:nth-child(2) {
+  --angle: 60deg;
+}
+
+.shoe:nth-child(3) {
+  --angle: 120deg;
+}
+
+.shoe:nth-child(4) {
+  --angle: 180deg;
+}
+
+.shoe:nth-child(5) {
+  --angle: 240deg;
+}
+
+.shoe:nth-child(6) {
+  --angle: 300deg;
+}
+
+@keyframes orbit {
+  from {
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateX(var(--orbit-radius)) rotate(calc(-1 * var(--angle)));
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(calc(var(--angle) + 360deg)) translateX(var(--orbit-radius)) rotate(calc(-1 * (var(--angle) + 360deg)));
+  }
+}
+
+.carousel_button {
+  background-color: transparent;
+  color: #171512;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease;
+  z-index: 10;
+}
+
+.carousel_button:hover {
+  transform: translate(-50%, -50%) scale(1.03);
+}
+.model_container {
+  position: relative;
+  display: inline-block;
+}
+
+.model_container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.model_container h2 {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  margin: 0;
+  color: white;
+  z-index: 1;
+}
+
+.underline-hover {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.underline-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.underline-hover:hover::after {
+  transform: scaleX(1);
+}
+
+/* Desktop only */
+@media (min-width: 769px) {
+  .shoe_carousel {
+    top: -200px;
+  }
+}

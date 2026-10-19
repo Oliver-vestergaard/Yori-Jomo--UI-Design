@@ -1,4 +1,3 @@
-/****** PASSWORD *****/
 /***** Password *****/
 
 .password-screen {
@@ -35,17 +34,21 @@
 .passwordbrød {
   text-align: center;
 }
-/* ==================================================
-   MOBIL / BASE STYLES
-   Standard styling
-================================================== */
+/********* MOBIL *********/
 
-/* =========================
-   HEADER
-========================= */
+/********* HEADER *********/
 
 .site-header {
+  width: 100%;
   height: 100px;
+}
+
+.site-header .header-inner.container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .header-inner {
@@ -53,9 +56,7 @@
   height: 100%;
 }
 
-/* =========================
-   LOGO
-========================= */
+/********* LOGO *********/
 
 .logo {
   position: absolute;
@@ -82,9 +83,7 @@
   width: 20px;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+/********* NAVIGATION *********/
 
 .menu {
   display: none;
@@ -103,7 +102,7 @@
   color: var(--footer-color);
 }
 
-/* Mobilmenu: åbnes via burger.js */
+/********* MOBIL MENU / BURGER *********/
 
 nav.active .menu {
   display: flex;
@@ -118,36 +117,6 @@ nav.active .menu {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
-
-/* =========================
-   SHOP DROPDOWN
-========================= */
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 20rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  background-color: var(--background-color);
-  border: 2px solid var(--footer-color);
-  z-index: 200;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* =========================
-   BURGER
-========================= */
 
 /* BURGER */
 
@@ -182,7 +151,7 @@ nav.active .menu {
     opacity 0.3s ease;
 }
 
-/* KRYDS */
+/********* BURGER ANIMATION *********/
 
 .burger.active .burgerLine:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
@@ -195,9 +164,8 @@ nav.active .menu {
 .burger.active .burgerLine:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
-/* =========================
-   IKONER
-========================= */
+
+/********* MENU SVG *********/
 
 .MenuSvg {
   display: block;
@@ -205,17 +173,13 @@ nav.active .menu {
   height: auto;
 }
 
-/* =========================
-   RESPONSIVE VISNING
-========================= */
+/********* HIDE *********/
 
 .mobile-only {
   display: none;
 }
 
-/* =========================
-   CONTAINER
-========================= */
+/******** CONTAINER ********/
 
 .container {
   width: 100%;
@@ -223,9 +187,7 @@ nav.active .menu {
   margin-inline: auto;
 }
 
-/* =========================
-   BELT CAROUSEL
-========================= */
+/******** BELT CARUSEL ********/
 
 .belt-slider {
   position: relative;
@@ -248,6 +210,8 @@ nav.active .menu {
   right: 0;
 }
 
+/******** CARD HOVER ********/
+
 .CardHover {
   transition:
     box-shadow 0.2s ease,
@@ -259,10 +223,7 @@ nav.active .menu {
   transform: translateY(-2px);
 }
 
-/* =========================
-   SEARCH
-========================= */
-
+/******** SEARCH BOX ********/
 .search-icon {
   background: none;
   border: none;
@@ -285,9 +246,7 @@ nav.active .menu {
   background-color: var(--color-background);
 }
 
-/* =========================
-   KURV
-========================= */
+/******** KURV ********/
 
 .CartSection {
   position: fixed;
@@ -358,9 +317,7 @@ nav.active .menu {
   margin: 0;
 }
 
-/* =========================
-   KNAPPER — SVG
-========================= */
+/******** SVG KNAP ********/
 
 button svg {
   display: block;
@@ -369,9 +326,7 @@ button svg {
   height: auto;
 }
 
-/* =========================
-   BRUSH BUTTON
-========================= */
+/******** SVG KNAP BORDER ********/
 
 .brush-button {
   position: relative;
@@ -404,14 +359,9 @@ button svg {
   z-index: 1;
 }
 
-/* ==================================================
-   TABLET
-   Fra 760 px
-================================================== */
+/******** TABLET ********/
 
-/* =========================
-   BURGER
-========================= */
+/******** BURGER ********/
 
 @media (min-width: 760px) {
   .burger {
@@ -420,9 +370,7 @@ button svg {
   }
 }
 
-/* =========================
-   KURV
-========================= */
+/******** Kurv ********/
 
 @media (min-width: 760px) {
   .CartSection {
@@ -430,14 +378,8 @@ button svg {
   }
 }
 
-/* ==================================================
-   DESKTOP
-   Fra 960 px
-================================================== */
-
-/* =========================
-   NAVIGATION
-========================= */
+/******** DESKTOP ********/
+/******** NAV ********/
 
 @media (min-width: 960px) {
   .menu {

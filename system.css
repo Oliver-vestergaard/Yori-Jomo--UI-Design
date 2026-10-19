@@ -271,7 +271,7 @@ select {
 .container,
 .container-narrow,
 .container-fluid {
-  padding: var(--space-xxl) var(--space-md);
+  padding: var(--space-xxl2) var(--space-md);
 }
 
 .discount {

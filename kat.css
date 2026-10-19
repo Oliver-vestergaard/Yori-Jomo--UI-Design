@@ -9,7 +9,7 @@
 
 .hero-content {
   position: absolute;
-  top: 65%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -178,6 +178,11 @@
 
   .hero-content h1 {
     margin: 0;
-    font-size: var(--font-size-h3);
+    font-size: var(--font-size-h2);
+  }
+
+  .hero-content h2 {
+    margin: 0;
+    font-size: var(--font-size-body);
   }
 }

@@ -1580,3 +1580,7 @@ html {
 
 /* ========== 12: Custom CSS ========== */
 /* Tilføj dine egne brugerdefinerede stilarter her - eller tilføj dem i en separat fil */
+
+a {
+  text-decoration: none;
+}

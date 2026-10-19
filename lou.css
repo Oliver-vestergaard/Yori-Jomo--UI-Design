@@ -47,6 +47,10 @@
   white-space: nowrap;
 }
 
+.shoe-link a {
+  font-size: var(--font-size-bodySm);
+}
+
 /* MOBIL */
 .styles {
   padding: 35px 0;
@@ -232,6 +236,10 @@
   /* STØRRE LINK */
   .shoe-link {
     margin-top: 12px;
+  }
+
+  .shoe-link a {
+    font-size: var(--font-size-h4);
   }
 
   .shoes-grid {
